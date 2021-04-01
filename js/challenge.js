@@ -5,19 +5,20 @@
     <title>Interactive Timer</title>
     </head>
 <body>
+ // Creates a Manipulative Timer
   "use strict";
 
-let hour = 0;
-let minute = 0;
-let second = 0;
-let millisecond = 0;
+  let hour = 0;
+  let minute = 0;
+  let second = 0;
+  let millisecond = 0;
 
-let count;
+  let count;
 
-document.form_main.start.onclick = () => plus();
-document.form_main.start.onclick = () => minus();
-document.form_main.pause.onclick = () => pause();
-document.form_main.reset.onclick = () => reset();
+  document.form_main.start.onclick = () => plus();
+  document.form_main.start.onclick = () => minus();
+  document.form_main.pause.onclick = () => pause();
+  document.form_main.reset.onclick = () => reset();
 
 function plus() {
   pause();
@@ -65,5 +66,22 @@ function timer() {
 function returnTime(input) {
   return input > 10 ? input : `0${input}`
 }
+
+//Creates a Comment Form
+  <div id="container">
+        <form action="comment-form.html" method="post" id="comment-form">
+            <h1>Leave a Comment.</h1>
+            <small></small>
+            <input type="text" placeholder="Comments">
+            <small></small>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+  //Creates a Like Counter Button
+  $(".heart button").on("click", function() {
+  let $count3 = $(this).parent().find('.count3');
+  $count3.html($count3.html() * 1 + 1);
+});
+
 </body>
 </html>

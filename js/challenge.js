@@ -12,18 +12,18 @@ let minute = 0;
 let second = 0;
 let millisecond = 0;
 
-let cron;
+let count;
 
 document.form_main.start.onclick = () => start();
 document.form_main.pause.onclick = () => pause();
 document.form_main.reset.onclick = () => reset();
 function start() {
   pause();
-  cron = setInterval(() => { timer(); }, 10);
+  count = setInterval(() => { timer(); }, 10);
 }
 
 function pause() {
-  clearInterval(cron);
+  clearInterval(count);
 }
 
 function reset() {
@@ -49,13 +49,13 @@ function timer() {
     minute = 0;
     hour++;
   }
-  document.getElementById('hour').innerText = returnData(hour);
-  document.getElementById('minute').innerText = returnData(minute);
-  document.getElementById('second').innerText = returnData(second);
-  document.getElementById('millisecond').innerText = returnData(millisecond);
+  document.getElementById('hour').innerText = returnTime(hour);
+  document.getElementById('minute').innerText = returnTime(minute);
+  document.getElementById('second').innerText = returnTime(second);
+  document.getElementById('millisecond').innerText = returnTime(millisecond);
 }
 
-function returnData(input) {
+function returnTime(input) {
   return input > 10 ? input : `0${input}`
 }
 </body>

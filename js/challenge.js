@@ -14,12 +14,19 @@ let millisecond = 0;
 
 let count;
 
-document.form_main.start.onclick = () => start();
+document.form_main.start.onclick = () => plus();
+document.form_main.start.onclick = () => minus();
 document.form_main.pause.onclick = () => pause();
 document.form_main.reset.onclick = () => reset();
-function start() {
+
+function plus() {
   pause();
   count = setInterval(() => { timer(); }, 10);
+}
+
+function minus() {
+  pause();
+  count = setInterval(() => { timer(); }, -10);
 }
 
 function pause() {
